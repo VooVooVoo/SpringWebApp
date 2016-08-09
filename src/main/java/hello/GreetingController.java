@@ -14,16 +14,22 @@ import org.springframework.web.bind.annotation.RequestParam;
     @Controller
     public class GreetingController {
 
-        @RequestMapping("/greeting")
+        @RequestMapping("/")
         public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
             model.addAttribute("name", name);
             return "greeting";
         }
         @RequestMapping("/fiki")
-        public String fiki(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        public String fiki(@RequestParam(value="name", required=false, defaultValue="Wojt") String name, Model model) {
             model.addAttribute("name", name);
-            return "greeting";
+            return "fiki";
         }
+        @RequestMapping("/reader")
+        public String reader(@RequestParam(value="name", required=false, defaultValue="Wojt") String name, Model model) {
+            model.addAttribute("name", name);
+            return "reader";
+        }
+
 
     }
 
