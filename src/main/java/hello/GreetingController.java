@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
             model.addAttribute("name", name);
             return "greeting";
         }
+        @RequestMapping("/fiki")
+        public String fiki(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+            model.addAttribute("name", name);
+            return "greeting";
+        }
 
     }
 
